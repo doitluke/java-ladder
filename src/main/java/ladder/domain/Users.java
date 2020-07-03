@@ -26,6 +26,10 @@ public class Users {
         this.users = users;
     }
 
+    public int findStartIndex(User user) {
+        return users.indexOf(user);
+    }
+
     public int getUserCount() {
         return this.users.size();
     }

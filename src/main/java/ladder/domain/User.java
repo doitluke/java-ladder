@@ -3,11 +3,12 @@ package ladder.domain;
 import ladder.utils.InputUtils;
 
 import java.util.Collections;
+import java.util.Objects;
 
 import static ladder.utils.InputUtils.BLANK;
+import static ladder.utils.InputUtils.MAX_NAME_LENGTH;
 
 public class User {
-    private final static int MAX_NAME_LENGTH = 5;
 
     private String name;
 
@@ -23,5 +24,18 @@ public class User {
     public String toString() {
         int needBlank = MAX_NAME_LENGTH - name.length();
         return String.join("", Collections.nCopies(needBlank, BLANK)) + name;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        User user = (User) o;
+        return name.equals(user.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name);
     }
 }

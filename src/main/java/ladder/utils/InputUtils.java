@@ -3,7 +3,8 @@ package ladder.utils;
 public class InputUtils {
 
     public final static String BLANK = " ";
-    public static final String COMMA = ",";
+    public final static  String COMMA = ",";
+    public final static int MAX_NAME_LENGTH = 5;
 
     public static String isEmptyOrNull(String text) {
         if (text == null || text.isEmpty()) {
